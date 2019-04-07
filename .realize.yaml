@@ -1,0 +1,25 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+- name: gin-ex
+  path: .
+  commands:
+    install:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    scripts:
+    - command: go run main.go
+      type: after
+      output: true
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
